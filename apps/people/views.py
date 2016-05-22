@@ -16,3 +16,7 @@ class PersonViewSet(viewsets.ModelViewSet):
         else:
             qs = Person.objects.none()
         return qs
+
+
+def home(request):
+    return render(request, 'people/home.html')

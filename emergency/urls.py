@@ -15,10 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from apps.people.views import home
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url('^api/v1/', include('apps.people.urls', namespace='people')),
-
+    url('^$', home, name='home'),
 ]
